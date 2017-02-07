@@ -41,6 +41,7 @@ gem 'omniauth-facebook'
 gem "paperclip", "~> 5.0.0"
 gem 'dropzonejs-rails'
 gem "figaro"
+gem 'aws-sdk', '~> 2.3'
 
 
 # Use Capistrano for deployment
