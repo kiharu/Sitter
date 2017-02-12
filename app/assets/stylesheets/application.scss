@@ -328,3 +328,39 @@ body.listings {
     color: #42708C;
   }
 }
+
+// showページのcss
+.container-listing-show {
+  background-color: #fff;
+  border-bottom: 1px solid #dce0e0;
+}
+
+.panel-show {
+  border-radius: 0px;
+  border: none;
+}
+
+.panel-show .panel-heading{
+  background-color: rgba(60,63,64,0.9);
+  color: #fff;
+  border-radius: 0px;
+  border-bottom: 0px;
+}
+
+.panel-show .panel-body{
+  border: 1px solid #eee;
+}
+
+.btn-wide{
+  width: 85%;
+}
+
+//showページのデスクトップcss
+@media (min-width: 992px){
+  .panel-show {
+    position: inherit;
+    width: 296px;
+    z-index: 100;
+    margin-top: -62px;
+  }
+}
