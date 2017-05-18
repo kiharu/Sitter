@@ -1,8 +1,11 @@
-
 <div class="profile-sidebar">
   <!-- SIDEBAR USERPIC -->
   <div class="profile-userpic">
-    <%= image_tag current_user.image, class: "img-circle profile-2" %>
+    <% if current_user.image %>
+      <%= image_tag current_user.image, class: "img-circle profile-2" %>
+    <% else %>
+      <%= image_tag 'user_icon.png', class: "img-circle profile-2" %>
+    <% end %>
   </div>
   <!-- END SIDEBAR USERPIC -->
   <!-- SIDEBAR USER TITLE -->
@@ -16,30 +19,37 @@
   <div class="profile-usermenu">
     <ul class="nav">
       <li class="<%= active?("listings", "basics") %>">
-        <%= link_to manage_listing_basics_path(@listing) do %><i class="glyphicon glyphicon-home"></i>基本事項<% end %>
+        <%= link_to manage_listing_basics_path(@listing) do %><i class="glyphicon glyphicon-home"></i>基本事項
+        <% end %>
       </li>
       <li class="<%= active?("listings", "description") %>">
-        <%= link_to manage_listing_description_path(@listing) do %><i class="glyphicon glyphicon-list-alt"></i>リスティングの内容<% end %>
+        <%= link_to manage_listing_description_path(@listing) do %><i class="glyphicon glyphicon-list-alt"></i>リスティングの内容
+        <% end %>
       </li>
       <li class="<%= active?("listings", "address") %>">
-        <%= link_to manage_listing_address_path(@listing) do %><i class="glyphicon glyphicon-user"></i>住所情報<% end %>
+        <%= link_to manage_listing_address_path(@listing) do %><i class="glyphicon glyphicon-user"></i>住所情報
+        <% end %>
       </li>
       <li class="<%= active?("listings", "price") %>">
-        <%= link_to manage_listing_price_path(@listing) do %><i class="glyphicon glyphicon-jpy"></i>料金<% end %>
+        <%= link_to manage_listing_price_path(@listing) do %><i class="glyphicon glyphicon-jpy"></i>料金
+        <% end %>
       </li>
       <li class="<%= active?("listings", "photos") %>">
-        <%= link_to manage_listing_photos_path(@listing), data:{turbolinks: false} do %>
+        <%= link_to manage_listing_photos_path(@listing), data: {turbolinks: false} do %>
           <i class="glyphicon glyphicon-picture"></i>写真
         <% end %>
       </li>
       <li class="<%= active?("listings", "calendar") %>">
-        <%= link_to manage_listing_calendar_path(@listing) do %><i class="glyphicon glyphicon-calendar"></i>カレンダー<% end %>
+        <%= link_to manage_listing_calendar_path(@listing) do %><i class="glyphicon glyphicon-calendar"></i>カレンダー
+        <% end %>
       </li>
       <li class="<%= active?("listings", "bankaccount") %>">
-        <%= link_to manage_listing_bankaccount_path(@listing) do %><i class="glyphicon glyphicon-piggy-bank"></i>受取口座情報<% end %>
+        <%= link_to manage_listing_bankaccount_path(@listing) do %><i class="glyphicon glyphicon-piggy-bank"></i>受取口座情報
+        <% end %>
       </li>
       <li class="<%= active?("listings", "publish") %>">
-        <%= link_to manage_listing_publish_path(@listing) do %><i class="glyphicon glyphicon-globe"></i>公開する<% end %>
+        <%= link_to manage_listing_publish_path(@listing) do %><i class="glyphicon glyphicon-globe"></i>公開する
+        <% end %>
       </li>
     </ul>
   </div>
